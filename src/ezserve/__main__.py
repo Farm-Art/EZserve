@@ -1,6 +1,13 @@
 import bottle as b
 import pathlib as p
+import argparse
 
+
+parser = argparse.ArgumentParser()
+parser.add_argument('-H', '--host', default='0.0.0.0', help='host to listen on')
+parser.add_argument('-p', '--port', default=8080, type=int, help='port to listen on')
+
+args = parser.parse_args()
 
 root = p.Path.cwd()
 
@@ -32,4 +39,4 @@ def render_dir(filepath):
 
 
 
-b.run(host='0.0.0.0', port=8080)
+b.run(host=args.host, port=args.port)
