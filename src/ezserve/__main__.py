@@ -11,7 +11,7 @@ def abs_path(path: str) -> p.Path:
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-H', '--host', default='0.0.0.0', help='host to listen on')
-parser.add_argument('-p', '--port', default=8080, type=int, help='port to listen on')
+parser.add_argument('-p', '--port', default=53443, type=int, help='port to listen on')
 parser.add_argument(
     'files', nargs='*',
     default=[p.Path.cwd()], type=abs_path,
